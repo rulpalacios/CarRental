@@ -1,0 +1,30 @@
+{% extends "rental/base.html" %}
+{% block title %}Cars{% endblock %}
+{% block content %}
+    <div class="columns is-multiline">
+    {% for car in cars %}
+        <div class="column is-4">
+        <div class="card space_elements has-text-centered" href="ola">
+            <div class="card-content">
+                <p class="title">
+                    {{ car.name }}
+                </p>
+                <p class="subtitle has-text-grey-light">
+                    {{ car.car_type|upper }}
+                </p>
+                <p class="cost-color">
+                    ${{ car.cost }}<span>/hour</span>
+                </p>
+                <figure>
+                    <a href="/rental/show/{{car.slug}}">
+                        <img src="{{ car.image.url }}">
+                    </a>
+                </figure>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+    
+    {% include "rental/car/pagination.html" with page=cars %}
+{% endblock %}

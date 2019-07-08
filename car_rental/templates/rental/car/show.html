@@ -1,0 +1,46 @@
+{% extends "rental/base.html" %}
+{% block title %}New Car{% endblock %}
+{% block content %}
+{% load static %}
+ <div class="columns">
+        <div class="column">
+        <div class="card space_elements has-text-centered">
+            <div class="card-content">
+                <p class="title">
+                    {{ car.name }}
+                </p>
+                <p class="cost-color">
+                    ${{ car.cost }}<span>/hour</span>
+                </p>
+                <figure>
+                    <a href="/rental/show/{{car.slug}}">
+                        <img src="{{ car.image.url }}">
+                    </a>
+                </figure>
+
+                
+                <div class="columns">
+                    <div class="column">
+                        <img src="{% static "images/type.png" %}" alt="">
+                        <p>{{car.car_type}}</p>
+                    </div>
+                    <div class="column">
+                        <img src="{% static "images/transmission.png" %}" alt="">
+                        <p>{{car.transmission}}</p>
+                    </div>
+                    <div class="column">
+                        <img src="{% static "images/seats.png" %}" alt="">
+                        <p>{{car.seats}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="button is-link" href="/rental/edit/{{ car.slug }}">Edit</a>
+            <a class="button is-danger" href="/rental/delete/{{ car.slug }}">
+                Delete
+            </a>  
+
+        </div>
+        </div>
+</div>  
+{% endblock %}

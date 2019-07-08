@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>         
+
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link href="{% static 'css/rental.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar is-link">
+    <!-- navbar brand, navbar menu... -->
+    </nav>
+
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <article class="message is-{{message.tags}}">
+                    <div class="message-header">
+                        <p>{{message.tags}}</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body">
+                        {{ message|safe }}
+                    </div>
+                </article>
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+
+    <div id="content" class="space_top background">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</html>

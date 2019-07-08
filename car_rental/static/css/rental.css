@@ -1,0 +1,36 @@
+.space_top{
+    margin-top: 100px;
+}
+.background {
+    background-color: #FBFCFE;
+}
+.space_elements{
+    margin-bottom: 30px;
+}
+.card{
+    border-radius: 10px !important;
+}
+.cost-color{
+    color: #FE7B37;
+    font-weight: bold;
+    font-size: 32px;
+}
+.cost-color span {
+    font-weight: lighter;
+    font-size: 15px;
+}
+.message.is-error {
+    background-color: #fff5f7;
+}
+.message.is-error .message-header {
+    background-color: #ff3860;
+    color: #fff;
+}
+.message.is-error .message-body {
+    border-color: #ff3860;
+    color: #cd0930;
+}
+
+img{
+    max-width: 40% !important;
+}

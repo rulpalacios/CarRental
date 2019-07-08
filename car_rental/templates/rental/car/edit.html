@@ -1,0 +1,91 @@
+{% extends 'rental/base.html' %}
+{% block title %}Edit{% endblock  %}
+{% block  content %}
+
+{{ form }}
+<form method="POST" action="new" enctype='multipart/form-data' novalidate>  
+{% csrf_token %}
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+        
+      {{ form.name }}
+    </div>
+    {{ form.name.errors }}
+  </div>
+
+  <div class="field">
+    <label class="label">Slug</label>
+    <div class="control">
+      {{ form.slug }}
+    </div>
+    {{ form.slug.errors }}
+  </div>
+
+  <div class="field">
+    <label class="label">Cost</label>
+    <div class="control">
+      {{ form.cost }}
+    </div>
+    {{ form.cost.errors }}
+  </div>
+
+  <div class="field">
+    <label class="label">Type</label>
+    <div class="control">
+      <div class="select">
+        {{ form.car_type }}
+      </div>
+    </div>
+    {{ form.car_type.errors }}
+  </div>
+  
+  <div class="field">
+    <label class="label">Owner</label>
+    <div class="control">
+      <div class="select">
+        {{ form.owner }}
+      </div>
+    </div>
+    {{ form.owner.errors }}
+  </div>
+
+  <div class="field">
+    <label class="label">Transmission</label>
+    <div class="control">
+      <div class="select">
+        {{ form.transmission }}
+      </div>
+    </div>
+    {{ form.transmission.errors }}
+  </div>
+
+  <div class="field">
+    <label class="label">Asientos</label>
+    <div class="control">
+      {{ form.seats }}
+    </div>
+    {{ form.seats.errors }}
+  </div>
+
+  <div class="file">
+  <label class="file-label">
+    {{ form.image }}
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Choose a file…
+      </span>
+    </span>
+  </label>
+  {{ form.image.errors }}
+</div>
+  
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  
+</form> 
+{% endblock  %}
